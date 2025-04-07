@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router";
 
 import Chat from "@/pages/chat";
-import ChatLayout from "@/layouts/chat-layout";
-import RootLayout from "@/layouts/root-layout";
+import RootLayout from "@/root-layout";
+import ChatLayout from "@/pages/chat/layout";
 
 function RoutesProvider() {
   return (
     <Routes>
       <Route element={<RootLayout />}>
-        <Route element={<ChatLayout />}>
+        <Route path="/" element={<ChatLayout />}>
           <Route index element={<Chat />} />
           <Route path="/:chatId" element={<Chat />} />
         </Route>
