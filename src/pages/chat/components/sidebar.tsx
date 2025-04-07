@@ -12,9 +12,10 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import UserAvatar from "./user-avatar";
-import { CircleX } from "lucide-react";
+import { CircleX, Github } from "lucide-react";
 import { useSetAtom } from "jotai";
 import { removeChatById } from "@/state/atoms/chats.atom";
+import { Button } from "@/components/ui/button";
 
 interface SidebarItem {
   id: string;
@@ -71,7 +72,19 @@ export function ChatSidebar({ items }: { items: SidebarItem[] }) {
         </SidebarGroup>
         <SidebarGroup />
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <a
+          href="https://github.com/9267aakashsharma/chat-demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center justify-center mb-4"
+        >
+          <Button className="inline-flex items-center gap-x-2">
+            <Github size={24} className="" />
+            View on GitHub
+          </Button>
+        </a>
+      </SidebarFooter>
     </Sidebar>
   );
 }
